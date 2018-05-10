@@ -1,6 +1,8 @@
 const http = require('http');
+var socketio = require('socket.io');
 
 let app = require('../app');
+let socket = require('../socket');
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -20,6 +22,8 @@ app.use((err, req, res, next) => {
 }); // Express middleware to handle errors
 
 let server = http.createServer(app);
+let io = socketio(server);
+socket(io);
 
 server.on('error', error => {
   if (error.syscall !== 'listen') { throw error }

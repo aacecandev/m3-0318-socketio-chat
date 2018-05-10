@@ -1,0 +1,27 @@
+.messages{
+  border: 1px solid red;
+  list-style: none;
+  width:250px;
+  margin: 0;
+  padding: 0;
+}
+
+.messages li {
+  display: block;
+  margin: 5px;
+}
+
+.message{
+  border-radius: 5px;
+  padding: 3px 5px;
+  display: inline-block;
+}
+
+.message.received{
+  background: pink;
+  text-align: left;
+}
+.message.emitted{
+  background: green;
+  text-align: right
+}
